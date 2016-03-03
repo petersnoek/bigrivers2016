@@ -18,6 +18,8 @@
         @foreach($json as $artist)
             <tr>
                 <td>{{ $artist->naamartiestband }}</td>
+                <td><a href="{{ $artist->youtube }}">Youtube</a></td>
+                <td></td>
             </tr>
         @endforeach
     </table>
