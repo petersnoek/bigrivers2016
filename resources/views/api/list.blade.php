@@ -48,6 +48,7 @@
     </style>
 @endsection
 
+
 @section('content')
 
 
@@ -99,6 +100,23 @@
             </tr>
             @endforeach
         </tbody>
+
+        <table>
+        <tr>
+            <th>Naam</th>
+            <th>website</th>
+            <th>youtube</th>
+
+        </tr>
+
+
+        @foreach($json as $artist)
+            <tr>
+                <td>{{ $artist->naamartiestband }}</td>
+                <td><a href="{{ $artist->youtube }}">Youtube</a></td>
+                <td></td>
+            </tr>
+        @endforeach
     </table>
     @endif
 

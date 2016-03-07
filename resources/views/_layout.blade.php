@@ -23,6 +23,15 @@
             @yield('nav-add-items-right')
         </div>
     </ul>
+    <title>Layout</title>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="nav">
+        @yield('nav')
+    </div>
 
     <div class="content">
         @yield('content')
