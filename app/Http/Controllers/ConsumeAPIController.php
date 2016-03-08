@@ -11,7 +11,7 @@ class ConsumeAPIController extends Controller
 {
     public function index()
     {
-        return 'home page';
+        return 'ConsumeAPIController@Index';
     }
 
     public function eventkit()

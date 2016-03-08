@@ -11,15 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/', 'ConsumeAPIController@index');
-Route::get('/home', 'ConsumeAPIController@index');
+Route::get('/', 'DefaultController@index');
+Route::get('/home', 'DefaultController@index');
 
 Route::get('/login', 'LoginController@index');
+
 Route::get('/admin', 'AdminController@index');
+Route::get('/admin/artist/', 'AdminController@list');
+Route::POST('/admin/artist/add/', 'AdminController@AddArtist');
 
 Route::get('/eventkit', 'ConsumeAPIController@eventkit');
 Route::get('/html', 'ConsumeAPIController@html');

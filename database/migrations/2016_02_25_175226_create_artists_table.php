@@ -14,15 +14,16 @@ class CreateArtistsTable extends Migration
     {
         Schema::create('artists', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('naamartiestband');
-            $table->string('biografie');
-            $table->string('persfoto1');
-            $table->string('persfoto2');
-            $table->string('persfoto3');
-            $table->string('website');
-            $table->string('youtube');
-            $table->string('facebook');
-            $table->string('twitter');
+            $table->string('NameBand');
+            $table->string('biography')->nullable();
+            $table->string('press_photo1')->nullable();
+            $table->string('press_photo2')->nullable();
+            $table->string('press_photo3')->nullable();
+            $table->string('website_url')->nullable();
+            $table->string('youtube_url')->nullable();
+            $table->string('facebook_url')->nullable();
+            $table->string('twitter_url')->nullable();
+            $table->string('SoftDelete')->default(0);
             $table->timestamps();
         });
 
