@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use DB;
 
 class ConsumeAPIController extends Controller
 {
@@ -18,12 +19,36 @@ class ConsumeAPIController extends Controller
             "part" => "artiesten"
         );
         $result = $this->CallAPI("GET", "https://www.eventkit.eu/api/", $arguments);
-        $json = json_decode($result);
+        $jsoneventkit = json_decode($result);
+
+        $comparisons = [];
 
         // loop eventkit results and find matching artists in our database.
+        foreach($jsoneventkit as $eventkitrow)
+        {
+            $c = new Comparison();
+            $c->eventkit = $eventkitrow;
+            $c->ek_naam = $eventkitrow->naamartiestband;
+            $c->ek_updated_at = $eventkitrow->lastupdate;
 
+            $a = DB::table('artists')->where('naamartiestband',$eventkitrow->naamartiestband)->get();
+            $cnt = count($a);
+            if ($cnt == 1)
+            {
+                $c->artist = (object) $a[0];
+                $c->at_naam = $c->artist->naamartiestband;
+                $c->at_updated_at = $c->artist->updated_at;
+            }
+            else
+            {
+                $c->at_naam = '';
+                $c->at_updated_at = '';
+            }
 
-        return view('api/list')->with('json', $json );
+            array_push($comparisons, $c);
+        }
+
+        return view('api/list')->with('json', $comparisons );
     }
 
     public function html()
@@ -69,4 +94,15 @@ class ConsumeAPIController extends Controller
     }
 
 
+}
+
+class Comparison
+{
+    var $eventkit;
+    var $ek_naam;
+    var $ek_updated_at;
+
+    var $artist;
+    var $at_naam;
+    var $at_updated_at;
 }

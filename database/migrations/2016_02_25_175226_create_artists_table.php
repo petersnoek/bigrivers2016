@@ -23,19 +23,9 @@ class CreateArtistsTable extends Migration
             $table->string('youtube');
             $table->string('facebook');
             $table->string('twitter');
-<<<<<<< HEAD
-=======
-
->>>>>>> f0a26aedfa64c94d0c16bf96c0fda6bad16f6174
             $table->timestamps();
-            $table->timestamp('synchronized_with_eventkit_at')->nullable();
         });
 
-        // seed the table. should be done using different way, see: https://laravel.com/docs/5.1/seeding
-        $a = new App\Artist();
-        $a->naamartiestband = 'TestArtist';
-        $a->website = 'http://www.google.com';
-        $a->save();
     }
 
     /**

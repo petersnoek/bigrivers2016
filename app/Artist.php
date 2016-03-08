@@ -16,7 +16,6 @@ class Artist extends Model
         'youtube',
         'facebook',
         'twitter',
-        'website',
         'created_at',
         'updated_at',
     ];
