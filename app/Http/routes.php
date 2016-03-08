@@ -15,7 +15,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/eventkit', 'ConsumeAPIController@index');
+Route::get('/', 'ConsumeAPIController@index');
+Route::get('/home', 'ConsumeAPIController@index');
+
+Route::get('/login', 'LoginController@index');
+Route::get('/admin', 'AdminController@index');
+
+Route::get('/eventkit', 'ConsumeAPIController@eventkit');
 Route::get('/html', 'ConsumeAPIController@html');
 
 

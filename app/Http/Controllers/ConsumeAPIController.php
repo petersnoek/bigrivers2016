@@ -11,6 +11,11 @@ class ConsumeAPIController extends Controller
 {
     public function index()
     {
+        return 'home page';
+    }
+
+    public function eventkit()
+    {
         //\Debugbar::addMessage('Another message', 'mylabel');
 
         // call Eventkit json webservice. code=authentication, part=table to receive
