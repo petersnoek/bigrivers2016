@@ -38,9 +38,8 @@
         td:nth-child(1), th:nth-child(1) { width: 300px; }
         td:nth-child(2), th:nth-child(2) { width: 150px; }
         td:nth-child(3), th:nth-child(3) { width: 50px; }
-        td:nth-child(4), th:nth-child(4) { width: 50px; }
-        td:nth-child(5), th:nth-child(5) { width: 150px; }
-        td:nth-child(6), th:nth-child(6) { width: 300px; }
+        td:nth-child(4), th:nth-child(4) { width: 150px; }
+        td:nth-child(5), th:nth-child(5) { width: 300px; }
 
         thead tr {
             display: block;
@@ -72,7 +71,6 @@
                 <th>Eventkit</th>
                 <th>Updated</th>
                 <th>-></th>
-                <th class="w3-light-blue"><-</th>
                 <th class="w3-light-blue">Updated</th>
                 <th class="w3-light-blue">Bigrivers.nl</th>
             </tr>
@@ -87,13 +85,9 @@
                 </td>
 
                 @if($comparison->artist)
-                <td class="w3-light-blue" style="text-align: center;">
-                    <input style="top:3px; height:18px;" class="w3-check" type="checkbox">
-                </td>
-                <td class="w3-light-blue">{{ $comparison->at_naam }}</td>
-                <td class="w3-light-blue">{{ $comparison->at_updated_at }}</td>
+                    <td class="w3-light-blue">{{ $comparison->at_updated_at }}</td>
+                    <td class="w3-light-blue">{{ $comparison->at_naam }}</td>
                 @else
-                    <td class="w3-light-blue" style="text-align: center;"></td>
                     <td class="w3-light-blue"></td>
                     <td class="w3-light-blue"></td>
                 @endif
@@ -101,11 +95,11 @@
             </tr>
             <tr class="even w3-tiny w3-example">
                 <td colspan="3">{{ $comparison->eventkit->biografie or '&nbsp;' }}</td>
-                <td colspan="3">{{ $comparison->artist->biografie or '&nbsp;' }}</td>
+                <td colspan="2">{{ $comparison->artist->biografie or '&nbsp;' }}</td>
             </tr>
             <tr class="even w3-tiny w3-example">
                 <td colspan="3">{{ $comparison->eventkit->website or '&nbsp;' }}</td>
-                <td colspan="3">{{ $comparison->artist->website or '&nbsp;' }}</td>
+                <td colspan="2">{{ $comparison->artist->website or '&nbsp;' }}</td>
             </tr>
             @endforeach
         </tbody>
