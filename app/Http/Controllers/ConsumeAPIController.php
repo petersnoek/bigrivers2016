@@ -37,12 +37,12 @@ class ConsumeAPIController extends Controller
             $c->ek_naam = $eventkitrow->naamartiestband;
             $c->ek_updated_at = $eventkitrow->lastupdate;
 
-            $a = DB::table('artists')->where('naamartiestband',$eventkitrow->naamartiestband)->get();
+            $a = DB::table('artists')->where('NameBand',$eventkitrow->naamartiestband)->get();
             $cnt = count($a);
             if ($cnt == 1)
             {
                 $c->artist = (object) $a[0];
-                $c->at_naam = $c->artist->naamartiestband;
+                $c->at_naam = $c->artist->NameBand;
                 $c->at_updated_at = $c->artist->updated_at;
             }
             else
