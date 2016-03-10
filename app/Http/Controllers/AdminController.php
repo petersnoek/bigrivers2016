@@ -19,17 +19,25 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin/index')->with(['ButtonText' => 'Add artist']);
+        return view('admin/index');
     }
 
     /**
      * @return $this
      */
-    public function list()
+    public function listArtist()
     {
-        return view('admin/index')->with(['ButtonText' => 'Add list.blade.php']);
+        dd();
+        return view('admin/Artist/list');
     }
 
+    /**
+     * @return $this
+     */
+    public function Artist()
+    {
+        return view('admin/AddArtist')->with(['ButtonText' => 'Add artist']);
+    }
     /**
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */

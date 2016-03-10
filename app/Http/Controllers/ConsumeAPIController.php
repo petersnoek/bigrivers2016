@@ -18,16 +18,18 @@ class ConsumeAPIController extends Controller
     {
         //\Debugbar::addMessage('Another message', 'mylabel');
 
+        // to view raw json response, browse to https://www.eventkit.eu/api/?code=5ecbe48c01e663d9f1f9baa4f27b0da6&part=artiesten
         // call Eventkit json webservice. code=authentication, part=table to receive
         $arguments = array(
             "code"=>"5ecbe48c01e663d9f1f9baa4f27b0da6",
             "part" => "artiesten"
         );
-        $result = $this->CallAPI("GET", "https://www.eventkit.eu/api/", $arguments);
+//        $result = $this->CallAPI("GET", "https://www.eventkit.eu/api/", $arguments);
+        $result = $this->CallAPI("GET", "https://www.eventkit.eu/api/?code=5ecbe48c01e663d9f1f9baa4f27b0da6&part=artiesten");
         $jsoneventkit = json_decode($result);
 
         $comparisons = [];
-
+        dd($result);
         // loop eventkit results and find matching artists in our database.
         foreach($jsoneventkit as $eventkitrow)
         {

@@ -17,7 +17,8 @@ Route::get('/home', 'DefaultController@index');
 Route::get('/login', 'LoginController@index');
 
 Route::get('/admin', 'AdminController@index');
-Route::get('/admin/artist/', 'AdminController@list');
+Route::get('/admin/artist/', 'AdminController@listArtist');
+Route::get('/admin/artist/add/', 'AdminController@AddArtist');
 Route::POST('/admin/artist/add/', 'AdminController@AddArtist');
 
 Route::get('/eventkit', 'ConsumeAPIController@eventkit');
