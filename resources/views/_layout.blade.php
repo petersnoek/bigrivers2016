@@ -2,11 +2,13 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <!-- load jquery -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" type="text/javascript"></script>
     <!-- tell the browser this site is optimized for mobile  -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- import the w3.css stylesheet. see: http://www.w3schools.com/w3css/ for more info -->
     <link rel="stylesheet" href="/css/w3.css">
-    <!--Own .css file-->
+    <!-- Own .css file-->
     <link rel="stylesheet" href="/css/style.css">
     <!-- if blade includes a "head" section, then it will be placed here -->
     @yield('head')

@@ -21,8 +21,11 @@ Route::get('/admin/artist/', 'AdminController@listArtist');
 Route::get('/admin/artist/add/', 'AdminController@AddArtist');
 Route::POST('/admin/artist/add/', 'AdminController@AddArtist');
 
-Route::get('/eventkit', 'ConsumeAPIController@eventkit');
-Route::get('/html', 'ConsumeAPIController@html');
+// routes for importing eventkit data into bigrivers.nl website
+Route::get('/eventkit/artists', 'ConsumeAPIController@artists_list');
+Route::post('/eventkit/artists', 'ConsumeAPIController@artists_confirm');
+Route::get('/eventkit/performances', 'ConsumeAPIController@performances');
+
 
 
 /*

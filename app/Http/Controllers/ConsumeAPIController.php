@@ -14,22 +14,18 @@ class ConsumeAPIController extends Controller
         return 'ConsumeAPIController@Index';
     }
 
-    public function eventkit()
+    public function artists_list()
     {
-        //\Debugbar::addMessage('Another message', 'mylabel');
-
         // to view raw json response, browse to https://www.eventkit.eu/api/?code=5ecbe48c01e663d9f1f9baa4f27b0da6&part=artiesten
         // call Eventkit json webservice. code=authentication, part=table to receive
         $arguments = array(
             "code"=>"5ecbe48c01e663d9f1f9baa4f27b0da6",
             "part" => "artiesten"
         );
-//        $result = $this->CallAPI("GET", "https://www.eventkit.eu/api/", $arguments);
-        $result = $this->CallAPI("GET", "https://www.eventkit.eu/api/?code=5ecbe48c01e663d9f1f9baa4f27b0da6&part=artiesten");
+        $result = $this->CallAPI("GET", "https://www.eventkit.eu/api/", $arguments);
         $jsoneventkit = json_decode($result);
 
         $comparisons = [];
-        dd($result);
         // loop eventkit results and find matching artists in our database.
         foreach($jsoneventkit as $eventkitrow)
         {
@@ -38,12 +34,12 @@ class ConsumeAPIController extends Controller
             $c->ek_naam = $eventkitrow->naamartiestband;
             $c->ek_updated_at = $eventkitrow->lastupdate;
 
-            $a = DB::table('artists')->where('naamartiestband',$eventkitrow->naamartiestband)->get();
+            $a = DB::table('artists')->where('NameBand',$eventkitrow->naamartiestband)->get();
             $cnt = count($a);
             if ($cnt == 1)
             {
                 $c->artist = (object) $a[0];
-                $c->at_naam = $c->artist->naamartiestband;
+                $c->at_naam = $c->artist->NameBand;
                 $c->at_updated_at = $c->artist->updated_at;
             }
             else
@@ -55,14 +51,49 @@ class ConsumeAPIController extends Controller
             array_push($comparisons, $c);
         }
 
-        return view('api/list')->with('json', $comparisons );
+        return view('eventkit/artists')->with('json', $comparisons );
     }
 
-    public function html()
+    public function artists_confirm()
     {
-        // show a mockup of the comparison screen
+        echo 'post received';
 
+        //dd($_POST);
+
+        if (isset($_POST['submit'])) {
+
+            // show "updates"
+            if (!empty($_POST['update'])) {
+                // Counting number of checked checkboxes.
+                $checked_count = count($_POST['update']);
+                echo "Bijwerken " . $checked_count . " artiesten: <br/>";
+                // Loop to store and display values of individual checked checkbox.
+                foreach ($_POST['update'] as $selected) {
+                    echo "<p>" . $selected . "</p>";
+                }
+            }
+            // show "inserts"
+            if (!empty($_POST['insert'])) {
+                // Counting number of checked checkboxes.
+                $checked_count = count($_POST['insert']);
+                echo "Toevoegen " . $checked_count . " artiesten: <br/>";
+                // Loop to store and display values of individual checked checkbox.
+                foreach ($_POST['insert'] as $selected) {
+                    echo "<p>" . $selected . "</p>";
+                }
+            }
+
+            return view('eventkit/artists_confirm')->with('json', $comparisons );
+
+        }
     }
+
+
+    public function performances()
+    {
+        // to view raw json response, browse to https://eventkit.eu/api/?code=5ecbe48c01e663d9f1f9baa4f27b0da6&part=programma
+    }
+
 
     // Method: POST, PUT, GET etc
     // Data: array("param" => "value") ==> index.php?param=value
