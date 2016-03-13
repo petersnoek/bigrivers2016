@@ -22,6 +22,10 @@ class ConsumeAPIController extends Controller
         $jsoneventkit = json_decode($result);
 
         $comparisons = [];
+<<<<<<< HEAD
+=======
+
+>>>>>>> feature/eventkit
         // loop eventkit results and find matching artists in our database.
         foreach($jsoneventkit as $eventkitrow)
         {
