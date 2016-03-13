@@ -9,10 +9,6 @@ use DB;
 
 class ConsumeAPIController extends Controller
 {
-    public function index()
-    {
-        return 'ConsumeAPIController@Index';
-    }
 
     public function artists_list()
     {
@@ -51,9 +47,10 @@ class ConsumeAPIController extends Controller
             array_push($comparisons, $c);
         }
 
-        return view('eventkit/artists')->with('json', $comparisons );
+        return view('eventkit/artists')->with('json', $comparisons )->with('message', 'testmessage');
     }
 
+    // http://bigrivers.nl/eventkit/artist_confirm
     public function artists_confirm()
     {
         echo 'post received';
@@ -86,6 +83,12 @@ class ConsumeAPIController extends Controller
             return view('eventkit/artists_confirm')->with('json', $comparisons );
 
         }
+    }
+
+    public function artists_process()
+    {
+        // do the actual database work, set success/fail alert, and redirect to artist sync
+        return artists_list("Imported");
     }
 
 

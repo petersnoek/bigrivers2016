@@ -1,17 +1,11 @@
 @extends('_layout')
 
-@section('title')
-    API
-@endsection
-
-
 @section('head')
-    <script src="js/table-cell-toggle.js" type="text/javascript">
+    <script src="/js/table-cell-toggle.js" type="text/javascript" ></script>
 @endsection
 
 
 @section('content')
-
 
     @if ($json == null)
         <span class="w3-red">No connection to eventkit</span>
@@ -24,8 +18,9 @@
                 <th>Eventkit</th>
                 <th>Updated</th>
                 <th>-></th>
-                <th class="w3-light-blue">Updated</th>
                 <th class="w3-light-blue">Bigrivers.nl</th>
+                <th class="w3-light-blue">Updated</th>
+
             </tr>
         </thead>
         <tbody>
@@ -39,8 +34,8 @@
                         <input type="checkbox" name="update[]" value="{{ $comparison->ek_naam }}" style="top:3px; height:18px;" class="w3-check" >
                     </td>
 
-                    <td class="w3-light-blue">{{ $comparison->at_updated_at }}</td>
                     <td class="w3-light-blue">{{ $comparison->at_naam }}</td>
+                    <td class="w3-light-blue">{{ $comparison->at_updated_at }}<td>
                 @else
                     <td style="text-align: center;">
                         <input type="checkbox" name="insert[]" value="{{ $comparison->ek_naam }}" style="top:3px; height:18px;" class="w3-check" >
