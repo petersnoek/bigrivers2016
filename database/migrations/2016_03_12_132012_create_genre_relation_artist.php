@@ -14,8 +14,8 @@ class CreateGenreRelationArtist extends Migration
     {
         Schema::create('GenresRelationToArtist', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('genre_id');
-            $table->integer('artist_id');
+            $table->integer('genre_id')->unsigned();
+            $table->integer('artist_id')->unsigned();
             $table->timestamps();
         });
     }

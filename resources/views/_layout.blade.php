@@ -19,14 +19,23 @@
 
 </head>
 <body>
+<div class="bannar">
+    <a href="/"><img src="/pictures_layout/logo.jpg" alt="Logo2016" class="logo"></a>
+    <a href="https://www.facebook.com/events/1473066383005869/" target="_blank"><img src="/pictures_layout/facebook-logo2.jpg" alt="F-Logo2016" class="SM-logo-F"/></a>
+    <a href="https://www.youtube.com/channel/UCJpdp-Ikda2SCWElN0cA8Og" target="_blank"><img src="/pictures_layout/youtube-logo.jpg" alt="Y-Logo2016" class="SM-logo-Y"/></a>
+    <a href="https://www.instagram.com/bigrivers16/" target="_blank"><img src="/pictures_layout/instagram-logo2.jpg" alt="I-Logo2016" class="SM-logo-I"/></a>
+    <a href="https://twitter.com/BigRivers16?lang=nl" target="_blank"><img src="/pictures_layout/twitter-logo2.jpg" alt="T-Logo2016" class="SM-logo-T"/></a>
+</div>
+
 
 <div class="w3-container">
 
     <ul class="w3-navbar w3-border w3-black">
         <li><a href="/">Home</a></li>
-        <li><a href="/eventkit/artists">eventkit</a></li>
-        <li><a href="/login">login</a></li>
-        <li><a href="/admin">admin</a></li>
+        <li><a href="/eventkit/artists">Eventkit</a></li>
+        <li><a href="/login">Login</a></li>
+        <li><a href="/admin">Admin</a></li>
+        <li><a href="/contact">Contact</a></li>
         @yield('nav-add-items')
         <div class="w3-right">
             @yield('nav-add-items-right')

@@ -1,9 +1,14 @@
 @extends('_layout')
 
 @section('title')
-    Home
+    list
+@stop
+
+@section('head')
+
 @stop
 
 @section('content')
-    <h1>Home Page</h1>
-@endsection
+    podia.list
+@stop
+

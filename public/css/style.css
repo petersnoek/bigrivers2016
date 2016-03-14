@@ -28,6 +28,48 @@ tbody {
     vertical-align:middle;
 }
 
+img.logo
+{
+    margin-bottom: 10px;
+}
+
+img.SM-logo-Y
+{
+    position: absolute;
+    max-width: 75px;
+    max-height: 75px;
+    right: 95px;
+    top: 20px;
+}
+
+img.SM-logo-F
+{
+    position: absolute;
+    max-width: 75px;
+    max-height: 75px;
+    right: 20px;
+    top: 20px;
+}
+
+img.SM-logo-T
+{
+    position: absolute;
+    max-width: 75px;
+    max-height: 75px;
+    right: 95px;
+    top: 95px;
+}
+
+img.SM-logo-I
+{
+    position: absolute;
+    max-width: 75px;
+    max-height: 75px;
+    right: 20px;
+    top: 95px;
+}
+
+
 div.block{
     display: block;
     float: left;

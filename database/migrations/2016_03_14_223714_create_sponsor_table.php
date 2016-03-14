@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSponsor extends Migration
+class CreateSponsorTable extends Migration
 {
     /**
      * Run the migrations.
