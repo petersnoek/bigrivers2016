@@ -27,3 +27,33 @@ tbody {
 .w3-table td,.w3-table th,.w3-table-all td,.w3-table-all th{
     vertical-align:middle;
 }
+
+div.block{
+    display: block;
+    float: left;
+    background-color: #f1f1f1;
+    padding: 15px;
+    margin: 7.5px;
+    width: 250px;
+    height: 300px;
+}
+
+div.block h2{
+    margin: auto;
+}
+
+div.block li{
+    display: block;
+    margin-left: -40px;
+    background-color: #d7d7d7;
+    padding: 10px 10px;
+    margin-bottom: 5px;
+    color: black;
+}
+div.block a{
+    text-decoration: none;
+}
+
+div.block li:hover{
+    background-color: #b4b4b4;
+}

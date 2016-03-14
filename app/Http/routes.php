@@ -16,11 +16,31 @@ Route::get('/home', 'DefaultController@index');
 
 Route::get('/login', 'LoginController@index');
 
+//--------------------------------------------------------------------------------------
+// Routes for admin controller
 Route::get('/admin', 'AdminController@index');
+
 Route::get('/admin/artist/', 'AdminController@listArtist');
-Route::get('/admin/artist/add/', 'AdminController@AddArtist');
+Route::get('/admin/artist/add/', 'AdminController@Artist');
 Route::post('/admin/artist/add/', 'AdminController@AddArtist');
 
+Route::get('/admin/evenement/', 'AdminController@listEvenement');
+Route::get('/admin/evenement/add/', 'AdminController@Evenement');
+Route::post('/admin/evenement/add/', 'AdminController@AddEvenement');
+
+Route::get('/admin/news/', 'AdminController@listNews');
+Route::get('/admin/news/add/', 'AdminController@News');
+Route::post('/admin/news/add/', 'AdminController@News');
+
+Route::get('/admin/sponsor/', 'AdminController@listSponsor');
+Route::get('/admin/sponsor/add/', 'AdminController@Sponsor');
+Route::post('/admin/sponsor/add/', 'AdminController@AddSponsor');
+
+Route::get('/admin/artist/', 'AdminController@listArtist');
+Route::get('/admin/artist/add/', 'AdminController@Artist');
+Route::post('/admin/artist/add/', 'AdminController@AddArtist');
+
+//----------------------------------------------------------------------------------------
 // routes for importing eventkit data into bigrivers.nl website
 Route::get('/eventkit/artists', 'ConsumeAPIController@artists_list');
 Route::post('/eventkit/artists', 'ConsumeAPIController@artists_confirm');
@@ -40,6 +60,8 @@ Route::get('/eventkit/performances', 'ConsumeAPIController@performances');
 |
 */
 
-Route::group(['middleware' => ['web']], function () {
-    //
+Route::group(['middleware' => 'web'], function () {
+    Route::auth();
+
+//    Route::get('/home', 'HomeController@index');
 });

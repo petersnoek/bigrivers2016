@@ -22,13 +22,15 @@ class AdminController extends Controller
         return view('admin/index');
     }
 
+//    ------------------------------------------------------------------------------------------------------
+//    Vanaf hier begint de sectie waar alle onderdelen van "Artiesten/bands" word behandeld en verwerkt.
+
     /**
      * @return $this
      */
-    public function listArtist()
+    public function ListArtist()
     {
-        dd();
-        return view('admin/Artist/list');
+        return view('admin/artist/list');
     }
 
     /**
@@ -36,7 +38,7 @@ class AdminController extends Controller
      */
     public function Artist()
     {
-        return view('admin/AddArtist')->with(['ButtonText' => 'Add artist']);
+        return view('admin/artist/Add')->with(['ButtonText' => 'Artist toevoegen']);
     }
     /**
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
@@ -44,6 +46,118 @@ class AdminController extends Controller
     public function AddArtist()
     {
         Artist::create(Request::all());
+
+        return redirect('/admin');
+    }
+
+//    ------------------------------------------------------------------------------------------------------
+//    Vanaf hier begint de sectie waar alle onderdelen van "Evenementen" word behandeld en verwerkt.
+
+    /**
+     * @return $this
+     */
+    public function ListEvenement()
+    {
+        return view('admin/evenement/list');
+    }
+
+    /**
+     * @return $this
+     */
+    public function Evenement()
+    {
+        return view('admin/evenement/Add')->with(['ButtonText' => 'Evenement toevoegen']);
+    }
+    /**
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function AddEvenement()
+    {
+        Evenement::create(Request::all());
+
+        return redirect('/admin');
+    }
+
+//    ------------------------------------------------------------------------------------------------------
+//    Vanaf hier begint de sectie waar alle onderdelen van "Genre" word behandeld en verwerkt.
+
+    /**
+     * @return $this
+     */
+    public function listGenre()
+    {
+        return view('admin/genre/list');
+    }
+
+    /**
+     * @return $this
+     */
+    public function Genre()
+    {
+        return view('admin/genre/Add')->with(['ButtonText' => 'Genre toevoegen']);
+    }
+    /**
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function AddGenre()
+    {
+        Genre::create(Request::all());
+
+        return redirect('/admin');
+    }
+
+//    ------------------------------------------------------------------------------------------------------
+//    Vanaf hier begint de sectie waar alle onderdelen van "News" word behandeld en verwerkt.
+
+    /**
+     * @return $this
+     */
+    public function listNews()
+    {
+        return view('admin/news/list');
+    }
+
+    /**
+     * @return $this
+     */
+    public function News()
+    {
+        return view('admin/news/Add')->with(['ButtonText' => 'News toevoegen']);
+    }
+    /**
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function AddNews()
+    {
+        News::create(Request::all());
+
+        return redirect('/admin');
+    }
+
+//    ------------------------------------------------------------------------------------------------------
+//    Vanaf hier begint de sectie waar alle onderdelen van "Sponsor" word behandeld en verwerkt.
+
+    /**
+     * @return $this
+     */
+    public function listSponsor()
+    {
+        return view('admin/sponsor/list');
+    }
+
+    /**
+     * @return $this
+     */
+    public function Sponsor()
+    {
+        return view('admin/sponsor/Add')->with(['ButtonText' => 'Sponsor toevoegen']);
+    }
+    /**
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function AddSponsor()
+    {
+        Sponsor::create(Request::all());
 
         return redirect('/admin');
     }
