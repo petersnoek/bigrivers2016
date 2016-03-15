@@ -12,9 +12,8 @@
 
     <h1>Nieuwe artiest toevoegen</h1>
     <hr>
-    <form action="/admin/artist/add/" method="post">
+    <form action="/admin/artist/add/" method="POST" enctype="multipart/form-data">
         @include('admin/artist/_form', ['ButtonText' => $ButtonText])
     </form>
-
 @stop
 

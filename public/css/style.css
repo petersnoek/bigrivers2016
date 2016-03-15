@@ -75,7 +75,7 @@ div.block{
     float: left;
     background-color: #f1f1f1;
     padding: 15px;
-    margin: 7.5px;
+    margin: 7px;
     width: 250px;
     height: 300px;
 }
@@ -99,3 +99,45 @@ div.block a{
 div.block li:hover{
     background-color: #b4b4b4;
 }
+#wrapper
+{
+    min-height: 100%;
+    /*height: auto !important;*/
+    height: 100%;
+    margin: 0 auto -4em;
+}
+.push
+{
+    height: 4em;
+}
+div.footer{
+    background-color: black;
+    padding: 8px;
+    color: white;
+    width: 100%;
+    height: 4em;
+}
+
+div.block li:hover{
+    background-color: #b4b4b4;
+}
+
+
+/*----------------------------------------*/
+/** {*/
+    /*margin: 0;*/
+/*}*/
+html, body {
+    height: 100%;
+}
+/*#wrapper {*/
+    /*min-height: 100%;*/
+    /*height: auto !important;*/
+    /*height: 100%;*/
+    /*margin: 0 auto -4em;*/
+/*}*/
+/*.footer, .push {*/
+    /*height: 4em;*/
+/*}*/
+
+

@@ -11,8 +11,8 @@
 |
 */
 
-Route::get('/', 'DefaultController@index');
 Route::get('/home', 'DefaultController@index');
+Route::get('/', 'DefaultController@index');
 
 Route::get('/login', 'LoginController@index');
 
@@ -36,9 +36,9 @@ Route::get('/admin/sponsor/', 'AdminController@listSponsor');
 Route::get('/admin/sponsor/add/', 'AdminController@Sponsor');
 Route::post('/admin/sponsor/add/', 'AdminController@AddSponsor');
 
-Route::get('/admin/artist/', 'AdminController@listArtist');
-Route::get('/admin/artist/add/', 'AdminController@Artist');
-Route::post('/admin/artist/add/', 'AdminController@AddArtist');
+Route::get('/admin/stages/', 'AdminController@listStagest');
+Route::get('/admin/stages/add/', 'AdminController@Stages');
+Route::post('/admin/stages/add/', 'AdminController@AddStages');
 
 //----------------------------------------------------------------------------------------
 // Routes for contact controller

@@ -53,8 +53,8 @@
         <hr>
 
         <ul>
-            <a href="#"><li>Voeg poduim toe</li></a>
-            <a href="#"><li>Beheer podia</li></a>
+            <a href="admin/stages/add"><li>Voeg poduim toe</li></a>
+            <a href="admin/stages/"><li>Beheer podia</li></a>
         </ul>
     </div>
     <div class="block">

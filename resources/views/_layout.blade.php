@@ -6,13 +6,17 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" type="text/javascript" ></script>
     {{-- tell the browser this site is optimized for mobile  --}}
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    {{-- import bootstrap 3.3.6 --}}
+    {{-- import bootstrap 3.3.6 CSS --}}
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
     {{-- import the w3.css stylesheet. see: http://www.w3schools.com/w3css/ for more info --}}
     <link rel="stylesheet" href="/css/w3.css">
     {{-- Own .css file --}}
     <link rel="stylesheet" href="/css/style.css">
     {{-- if blade includes a "head" section, then it will be placed here --}}
+    <script src="/js/jquery-1.12.1.js"></script>
+    {{-- Import bootstrap 1.12.1 JS Jquery --}}
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    {{-- Import bootstrap 3.3.6 JS --}}
 @yield('head')
 
 <title>@yield('title') - BigRivers</title>
@@ -27,6 +31,9 @@
     <a href="https://twitter.com/BigRivers16?lang=nl" target="_blank"><img src="/pictures_layout/twitter-logo2.jpg" alt="T-Logo2016" class="SM-logo-T"/></a>
 </div>
 
+<div class="modals">
+    @yield('modals')
+</div>
 
 <div class="w3-container">
 
@@ -41,9 +48,9 @@
             @yield('nav-add-items-right')
         </div>
     </ul>
-<body>
+</div>
 
-<div class="container">
+<div class="container" id="wrapper">
 
     <div class="nav">
         @yield('nav')
@@ -52,10 +59,14 @@
     <div class="content">
         @yield('content')
     </div>
-
+    <div class="push"></div>
 </div>
 
+<div class="footer">
+    <p>Copyright {{$copyright_year}} - Big Rivers Festival</p>
+</div>
 
+@yield('javascript')
 
 </body>
 </html>
