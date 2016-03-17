@@ -99,45 +99,59 @@ div.block a{
 div.block li:hover{
     background-color: #b4b4b4;
 }
-#wrapper
-{
-    min-height: 100%;
-    /*height: auto !important;*/
-    height: 100%;
-    margin: 0 auto -4em;
-}
-.push
-{
-    height: 4em;
-}
 div.footer{
     background-color: black;
     padding: 8px;
     color: white;
     width: 100%;
     height: 4em;
+    margin-top: 15px;
 }
 
 div.block li:hover{
     background-color: #b4b4b4;
 }
 
-
-/*----------------------------------------*/
-/** {*/
-    /*margin: 0;*/
-/*}*/
-html, body {
-    height: 100%;
+div.artist_block
+{
+    height: 404px;
+    width: 100%;
+    float: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
-/*#wrapper {*/
-    /*min-height: 100%;*/
-    /*height: auto !important;*/
-    /*height: 100%;*/
-    /*margin: 0 auto -4em;*/
-/*}*/
-/*.footer, .push {*/
-    /*height: 4em;*/
-/*}*/
+
+div.artist_text
+{
+    width: 50%;
+    float: left;
+}
+
+img.artist_list_img
+{
+    max-width: 400px;
+    max-height: 400px;
+    float: right;
+}
+
+a.ReadMore
+{
+    text-decoration: underline;
+    color: #0e00b4;
+}
+
+a.ReadMore:hover
+{
+    text-decoration: none;
+    color: #8800b4;
+}
+.error
+ {
+     color: #a94442;
+ }
+.error_list
+ {
+     margin-left: 15px;
+ }
 
 

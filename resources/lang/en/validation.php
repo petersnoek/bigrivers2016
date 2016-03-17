@@ -89,9 +89,26 @@ return [
     */
 
     'custom' => [
+//      Example
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+//      Real
+        'NameBand' => [
+            'required' => "Het vak voor de 'band naam' is vereist",
+            'size' => "De band naam kan niet kleiner zijn dan 3 tekens",
+        ],
+        'biography' => [
+            'required' => "Het vak voor de 'biografie' is vereist",
+            'size' => "De biografie kan niet kleiner zijn dan 10 tekens",
+        ],
+        'press_photo1' => [
+            'required' => "Het vak voor de 'Pers foto 1' is vereist",
+            'image' => "Het bestand dat u probeert te uploaden bij 'pers foto 1' moet een foto zijn",
+        ],
+
+
+
     ],
 
     /*

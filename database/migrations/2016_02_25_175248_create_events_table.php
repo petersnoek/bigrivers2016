@@ -23,7 +23,7 @@ class CreateEventsTable extends Migration
             $table->string('price');
             $table->string('location');
             $table->integer('author_id');
-            $table->integer('SoftDelete');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

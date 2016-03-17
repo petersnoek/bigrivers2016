@@ -6,7 +6,7 @@ use Illuminate\Database\Migrations\Migration;
 class CreateArtistsTable extends Migration
 {
     /**
-     * Run the migrations.co
+     * Run the migrations.
      *
      * @return void
      */
@@ -15,7 +15,7 @@ class CreateArtistsTable extends Migration
         Schema::create('artists', function (Blueprint $table) {
             $table->increments('id');
             $table->string('NameBand');
-            $table->string('biography')->nullable();
+            $table->text('biography')->nullable();
             $table->string('press_photo1')->nullable();
             $table->string('press_photo2')->nullable();
             $table->string('press_photo3')->nullable();
@@ -23,7 +23,7 @@ class CreateArtistsTable extends Migration
             $table->string('youtube_url')->nullable();
             $table->string('facebook_url')->nullable();
             $table->string('twitter_url')->nullable();
-            $table->string('SoftDelete')->default(0);
+            $table->softDeletes();
             $table->timestamps();
         });
 

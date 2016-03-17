@@ -18,6 +18,7 @@ class CreatePerformancesTable extends Migration
             $table->integer('stage_id')->unsigned();
             $table->dateTime('start');
             $table->dateTime('finish');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

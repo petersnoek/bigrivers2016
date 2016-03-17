@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
 
-class ArtistRequest extends Request
+class CreateArtistRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +24,9 @@ class ArtistRequest extends Request
     public function rules()
     {
         return [
-            'NameBand' => 'required|min:3'
+            'NameBand' => 'required|min:3',
+            'biography' => 'required|min:10',
+            'press_photo1' => 'required|image',
         ];
     }
 }

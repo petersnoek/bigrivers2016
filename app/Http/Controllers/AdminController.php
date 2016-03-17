@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Artist;
-use Request;
+use App\Genres;
+use App\Http\Requests\CreateArtistRequest;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -19,7 +20,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin/index');
+        return view('admin/index')->with(['ButtonText' => 'Add artist']);
     }
 
 //    ------------------------------------------------------------------------------------------------------
@@ -30,7 +31,20 @@ class AdminController extends Controller
      */
     public function ListArtist()
     {
-        return view('admin/artist/list');
+        $artists = Artist::all();
+
+        return view('admin/artist/list')->with(['artists' => $artists]);
+    }
+
+    /**
+     * @param $id
+     * @return $this
+     */
+    public function ShowArtist($id)
+    {
+        $artist = Artist::findOrFail($id);
+//dd($artist);
+        return view('admin/artist/show')->with(['artist' => $artist]);
     }
 
     /**
@@ -40,16 +54,19 @@ class AdminController extends Controller
     {
         return view('admin/artist/Add')->with(['ButtonText' => 'Artist toevoegen']);
     }
+
     /**
+     * @param CreateArtistRequest $request
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function AddArtist()
+    public function AddArtist(CreateArtistRequest $request)
     {
-        $input= Request::all();
+        $input= $request->all();
 
-        $upload_dir = '/pictures/';
+        $upload_dir = 'pictures/';
         for($index=1; $index<=3; $index++)
         {
+            //artist section
             if(isset($input['press_photo'.$index]))
             {
                 list($img_check,) = explode("/", $input['press_photo'.$index]->getClientMimeType());
@@ -57,15 +74,41 @@ class AdminController extends Controller
                 ${"name" .$index} .= time('Hms');
                 ${"md5ed_img_name" . $index} = md5(${"name" .$index});
 
-                $input['press_photo'.$index] = $upload_dir.${"md5ed_img_name" . $index}.'.jpg';
+                $save = "".$upload_dir.${"md5ed_img_name" . $index}.".jpeg"; //This is the new file you saving
+                $file = $_FILES['press_photo'.$index]['tmp_name']; //This is the original file
+
+                list($width, $height) = getimagesize($file) ;
+
+                $tn = imagecreatetruecolor($width, $height) ;
+                $image = $this->imageCreateFromAny($file);
+                imagecopyresampled($tn, $image, 0, 0, 0, 0, $width, $height, $width, $height) ;
+
+                imagejpeg($tn, $save, 70) ;
+
+                $input['press_photo'.$index] = $upload_dir.${"md5ed_img_name" . $index}.'.jpeg';
             }
             else
             {
                 $input['press_photo'.$index] = null;
             }
         }
-        dd($input);
-        Artist::create($input);
+        $input_Artist = $input;
+
+        Artist::create($input_Artist);
+
+        //genre section
+
+        $AllGenres_object = Genres::all();
+        $genres = explode(', ',$input['Genre']);
+
+        foreach($genres as $genre)
+        {
+            if (!property_exists($AllGenres_object, $genre))
+            {
+                $genre_array = ['name' => $genre];
+                Genres::create($genre_array);
+            }
+        }
 
         return redirect('/admin');
     }
@@ -209,4 +252,38 @@ class AdminController extends Controller
 
         return redirect('/admin');
     }
+
+    /**
+     * @param $filepath
+     * @return bool|resource
+     */
+    public function imageCreateFromAny($filepath)
+    {
+        $type = exif_imagetype($filepath); // [] if you don't have exif you could use getImageSize()
+        $allowedTypes = array(
+            1,  // [] gif
+            2,  // [] jpg
+            3,  // [] png
+            6   // [] bmp
+        );
+        if (!in_array($type, $allowedTypes)) {
+            return false;
+        }
+        switch ($type) {
+            case 1 :
+                $im = imageCreateFromGif($filepath);
+                break;
+            case 2 :
+                $im = imageCreateFromJpeg($filepath);
+                break;
+            case 3 :
+                $im = imageCreateFromPng($filepath);
+                break;
+            case 6 :
+                $im = imageCreateFromBmp($filepath);
+                break;
+        }
+        return $im;
+    }
+
 }

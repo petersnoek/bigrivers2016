@@ -18,7 +18,7 @@ class CreateSponsorTable extends Migration
             $table->string('image')->nullable();
             $table->string('url')->nullable();
             $table->integer('priority')->nullable();
-            $table->integer('SoftDelete')->default(0);
+            $table->softDeletes();
             $table->integer('author_id')->unasigned();
             $table->timestamps();
         });

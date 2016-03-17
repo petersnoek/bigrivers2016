@@ -21,6 +21,7 @@ Route::get('/login', 'LoginController@index');
 Route::get('/admin', 'AdminController@index');
 
 Route::get('/admin/artist/', 'AdminController@listArtist');
+Route::get('/admin/artist/show/{id}', 'AdminController@ShowArtist');
 Route::get('/admin/artist/add/', 'AdminController@Artist');
 Route::post('/admin/artist/add/', 'AdminController@AddArtist');
 
@@ -51,8 +52,6 @@ Route::get('/eventkit/artists', 'ConsumeAPIController@artists_list');
 Route::post('/eventkit/artists', 'ConsumeAPIController@artists_confirm');
 Route::post('/eventkit/artists_process', 'ConsumeAPIController@artists_process');
 Route::get('/eventkit/performances', 'ConsumeAPIController@performances');
-
-
 
 /*
 |--------------------------------------------------------------------------
