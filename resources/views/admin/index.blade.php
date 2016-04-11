@@ -8,6 +8,19 @@
 
 @stop
 
+@section('modals')
+    <div id="insertModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    {{--Here needs the text be inserted that needs to be displayed on the modal--}} {{$message or 'Error: variable empty'}}
+                </div>
+            </div>
+        </div>
+    </div>
+@stop
+
 @section('content')
 
     <div class="block">
@@ -26,7 +39,7 @@
         <ul>
             <a href="admin/artist/add"><li>Voeg artiest/band toe</li></a>
             <a href="admin/artist"><li>Beheer artiesten</li></a>
-            <a href="#"><li>Voeg optreden toe</li></a>
+            <a href="admin/performance/add"><li>Voeg optreden toe</li></a>
             <a href="#"><li>Beheer optredens</li></a>
         </ul>
     </div>
@@ -35,8 +48,8 @@
         <hr>
 
         <ul>
-            <a href="admin/evenement/add"><li>Voeg evenement toe</li></a>
-            <a href="admin/evenement"><li>Beheer evenementen</li></a>
+            <a href="admin/event/add"><li>Voeg evenement toe</li></a>
+            <a href="admin/event"><li>Beheer evenementen</li></a>
         </ul>
     </div>
     <div class="block">
@@ -53,8 +66,8 @@
         <hr>
 
         <ul>
-            <a href="admin/stages/add"><li>Voeg podium toe</li></a>
-            <a href="admin/stages/"><li>Beheer podia</li></a>
+            <a href="admin/stage/add"><li>Voeg podium toe</li></a>
+            <a href="admin/stage/"><li>Beheer podia</li></a>
         </ul>
     </div>
     <div class="block">
@@ -78,4 +91,8 @@
             <a href="#"><li>Beheer personeel</li></a>
         </ul>
     </div>
+@stop
+
+@section('javascript')
+
 @stop

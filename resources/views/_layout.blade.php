@@ -1,4 +1,4 @@
-<!doctype html>
+_layout.blade.php<!doctype html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -33,6 +33,17 @@
 </div>
 
 <div class="modals">
+    <div id="notificationModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    {{$massage or 'Error: variable empty'}}
+                </div>
+            </div>
+        </div>
+    </div>
+
     @yield('modals')
 </div>
 
@@ -47,6 +58,7 @@
         @yield('nav-add-items')
         <div class="w3-right">
             @yield('nav-add-items-right')
+            {{$user or "Unknown"}}
         </div>
     </ul>
 </div>
@@ -60,7 +72,6 @@
     <div class="content">
         @yield('content')
     </div>
-    <div class="push"></div>
 </div>
 
 <div class="footer">

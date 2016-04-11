@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Sponsor extends Model
 {
+    public $table = "sponsor";
+
     protected $fillable = [
         'title',
         'image',

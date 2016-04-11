@@ -13,6 +13,8 @@
     <input type="text" class="form-control" name="color_code">
 </div>
 
+<input type="hidden" name="_token" value="{{ csrf_token() }}">
+
 <div class="form-group">
-    <button type="submit" name="SubmitAddArtistForm" class="btn btn-primary form-control">{{$ButtonText}}</button>
+    <button type="submit" name="SubmitAddStagesForm" class="btn btn-primary form-control">{{$ButtonText}}</button>
 </div>

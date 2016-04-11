@@ -1,0 +1,115 @@
+/*Hier worden er speciale tekens uit de font-awesome gehaald die worden gebruikt*/
+@import url('//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,700,600);
+
+i {
+    display: inline-block;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    font-size-adjust: none;
+    font-stretch: normal;
+    font-feature-settings: normal;
+    font-language-override: normal;
+    font-kerning: auto;
+    font-synthesis: weight style;
+    font-variant: normal;
+    font-size: inherit;
+    text-rendering: auto;
+    transform: translate(0px, 0px);
+    color: #fff;
+}
+.facebook:before {content: "\f230";}
+.twitter:before {content: "\f081";}
+.youtube:before {content: "\f16a";}
+.instagram:before {content: "\f16d";}
+
+
+body
+{
+    background-color: #000000;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-family: raleway, sans-serif;
+}
+
+.container
+{
+    width: 100%; !important;
+}
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////*/
+/*Hier staat alle css voor de first-page*/
+div.first-page div.header .img_header
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+div.first-page div.header div.place_div
+{
+    position: absolute;
+    left: 50%;
+    top: 20px;
+    margin-left: 200px;
+    text-align: right;
+}
+div.place_div p
+{
+    margin-bottom: 0px;
+}
+div.first-page div.header div.triangle_div
+{
+    position: absolute;
+    left: 50%;
+    top: 20px;
+    margin-left: -34px;
+    text-align: center;
+}
+div.place_div p
+{
+    margin-bottom: 0px;
+}
+div.first-page div.header div.date_div
+{
+    position: absolute;
+    right: 50%;
+    top: 20px;
+    margin-right: 200px;
+}
+div.date_div p
+{
+    margin-bottom: 0px;
+}
+
+div.first-page div.content
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////*/
+/*Hier staat alle css voor de last-page*/
+div.last-page div.footer
+{
+    background-color: red;
+    width: 100%;
+    margin-top: 100px;
+}
+
+div.test
+{
+    padding: 30px;
+    background: linear-gradient(315deg, transparent 45px, #333 0), linear-gradient(45deg, transparent 45px, #333 0);
+}
+
+.border
+{
+    border: solid white 1px;
+    padding: 10px;
+}

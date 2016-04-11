@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class GenresRelationToArtist extends Model
+class Genresrelationtoartist extends Model
 {
     protected $fillable = [
         'artist_id',
@@ -12,4 +12,6 @@ class GenresRelationToArtist extends Model
         'created_at',
         'updated_at',
     ];
+
+    protected $table = "genresrelationtoartist";
 }

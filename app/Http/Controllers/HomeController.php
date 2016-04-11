@@ -24,6 +24,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $massage = $request->session->get('massage');
+        
+        return view('home')->with(['massage' => $massage]);
     }
 }

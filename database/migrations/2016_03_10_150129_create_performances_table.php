@@ -16,6 +16,7 @@ class CreatePerformancesTable extends Migration
             $table->increments('id')->unsigned();
             $table->integer('artist_id')->unsigned();
             $table->integer('stage_id')->unsigned();
+            $table->integer('event_id')->unsigned();
             $table->dateTime('start');
             $table->dateTime('finish');
             $table->softDeletes();

@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class NewsItems extends Model
+class Newsitems extends Model
 {
     protected $fillable = [
         'title',

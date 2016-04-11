@@ -1,7 +1,7 @@
 @extends('_layout')
 
 @section('title')
-    Admin - artiest
+    Admin - add artiest
 @stop
 
 @section('head')
@@ -24,4 +24,5 @@
     <form method="post" enctype="multipart/form-data">
         @include('admin/artist/_form', ['ButtonText' => $ButtonText, 'errors' => $errors])
     </form>
+
 @stop

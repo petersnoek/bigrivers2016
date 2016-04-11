@@ -1,4 +1,4 @@
-@extends('_layout')
+@extends('_layout_frontend')
 
 @section('title')
     Home
@@ -6,22 +6,38 @@
 
 @section('modals')
 
-    <div id="LogoutSuccessModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
-        <div class="modal-dialog modal-sm">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    U bent succesvol uitgelogt.
-                </div>
-            </div>
-        </div>
-    </div>
-
 @stop
 
 @section('content')
-    <h1>Home Page</h1>
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#LogoutSuccessModal">Small modal</button>
+    <div class="first-page">
+        <div class="header">
+            <image src="/pictures_layout/promo_group_back.png" class="img_header"></image>
+            <div class="date_div">
+                <p>1 Mei 2016</p>
+                <p>Zondag 10:00 uur</p>
+                <p>_________________</p>
+            </div>
+            <div class="triangle_div">
+                <p>Gratis</p>
+                <p>Toegang</p>
+            </div>
+            <div class="place_div">
+                <p>Slikveld 1</p>
+                <p>Dordrecht, Nederland</p>
+                <p>_________________</p>
+            </div>
+            <div class="content">
+                <h1 class="title">Big Rivers</h1>
+                <span class="border">Het leukste festival van Dordrecht</span>
+            </div>
+            <div class="footer">
+                <a href=""><i class="facebook"></i></a>
+                <a href=""><i class="twitter"></i></a>
+                <a href=""><i class="youtube"></i></a>
+                <a href=""><i class="instagram"></i></a>
+            </div>
+        </div>
+    </div>
 @endsection
 
 @section('javascript')

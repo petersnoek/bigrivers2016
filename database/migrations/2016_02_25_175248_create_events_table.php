@@ -20,7 +20,7 @@ class CreateEventsTable extends Migration
             $table->string('image');
             $table->date('start_date');
             $table->date('end_date');
-            $table->string('price');
+            $table->boolean('price', 15, 2);
             $table->string('location');
             $table->integer('author_id');
             $table->softDeletes();

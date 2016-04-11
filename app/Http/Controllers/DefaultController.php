@@ -8,8 +8,14 @@ use App\Http\Requests;
 
 class DefaultController extends Controller
 {
-    public function index()
+    /**
+     * @param Request $request
+     * @return mixed
+     */
+    public function index(Request $request)
     {
-        return view('welcome');
+        $message = $request->session()->get('message');
+        
+        return view('welcome')->with(['message' => $message]);
     }
 }
