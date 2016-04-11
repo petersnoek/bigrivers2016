@@ -11,6 +11,7 @@
         <span class="w3-red">No connection to eventkit</span>
     @else
         <form method="post" >
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
         <table id="report" class="w3-table w3-small w3-bordered">
         <thead>
@@ -47,7 +48,7 @@
 
             </tr>
             <tr class="even w3-tiny w3-example">
-                <td colspan="3">{{ $comparison->eventkit->biografie or '&nbsp;' }}</td>
+                <td colspan="3">{{ $comparison->short_bio or '&nbsp;' }}</td>
                 <td colspan="3">{{ $comparison->artist->biografie or '&nbsp;' }}</td>
             </tr>
             <tr class="even w3-tiny w3-example">

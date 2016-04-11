@@ -9,6 +9,25 @@ use DB;
 
 class ConsumeAPIController extends Controller
 {
+    public function first20last20words($text) {
+        $words = [];
+        $pos = [];
+        $out = '';
+
+        if (str_word_count($text, 0) > 20) {
+            // return associative array
+            $words = str_word_count($text, 2);
+            $pos = array_keys($words);
+            $out = substr($text, 0, $pos[20]) . ' ... ';
+        }
+
+        $wordcount = sizeof($words);
+        if (str_word_count($text, 0) > 40) {
+            $out = $out . substr($text, $pos[$wordcount-20], $pos[$wordcount-1]);
+        }
+
+        return $out;
+    }
 
     public function artists_list()
     {
@@ -29,6 +48,9 @@ class ConsumeAPIController extends Controller
             $c->eventkit = $eventkitrow;
             $c->ek_naam = $eventkitrow->naamartiestband;
             $c->ek_updated_at = $eventkitrow->lastupdate;
+            $limit = 200;
+            $len = strlen($eventkitrow->biografie);
+            $c->short_bio = $this->first20last20words($eventkitrow->biografie);
 
             $a = DB::table('artists')->where('NameBand',$eventkitrow->naamartiestband)->get();
             $cnt = count($a);
@@ -53,20 +75,27 @@ class ConsumeAPIController extends Controller
     // http://bigrivers.nl/eventkit/artist_confirm
     public function artists_confirm()
     {
-        echo 'post received';
-
+        echo '<h1>confirm</h1>';
         //dd($_POST);
+
 
         if (isset($_POST['submit'])) {
 
+            $inserts = array();
+            $updates = array();
+
             // show "updates"
             if (!empty($_POST['update'])) {
+
                 // Counting number of checked checkboxes.
                 $checked_count = count($_POST['update']);
                 echo "Bijwerken " . $checked_count . " artiesten: <br/>";
                 // Loop to store and display values of individual checked checkbox.
                 foreach ($_POST['update'] as $selected) {
-                    echo "<p>" . $selected . "</p>";
+                    $u = new Update();
+                    $u->existing_id = 1;
+                    $u->naam = $selected;
+                    array_push($updates, $u);
                 }
             }
             // show "inserts"
@@ -76,11 +105,16 @@ class ConsumeAPIController extends Controller
                 echo "Toevoegen " . $checked_count . " artiesten: <br/>";
                 // Loop to store and display values of individual checked checkbox.
                 foreach ($_POST['insert'] as $selected) {
-                    echo "<p>" . $selected . "</p>";
+                    $i = new Insert();
+                    $i->naam = $selected;
+                    array_push($inserts, $i);
                 }
             }
 
-            return view('eventkit/artists_confirm')->with('json', $comparisons );
+            //dd($updates);
+            //dd($inserts);
+
+            return view('eventkit/artists_confirm')->with('updates', $updates)->with('inserts', $inserts);
 
         }
     }
@@ -146,4 +180,18 @@ class Comparison
     var $artist;
     var $at_naam;
     var $at_updated_at;
+}
+
+class Update
+{
+    var $existing_id;
+    var $naam;
+    var $updated_at;
+}
+
+
+class Insert
+{
+    var $naam;
+    var $updated_at;
 }
