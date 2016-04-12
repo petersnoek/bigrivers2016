@@ -29,6 +29,7 @@ i {
 body
 {
     background-color: #000000;
+    /*background-image: C:\Users\Toshiba\Dropbox\Big Rivers Website\HKf7193;*/
     color: #FFFFFF;
     font-weight: bold;
     font-family: raleway, sans-serif;
@@ -54,6 +55,7 @@ div.first-page div.header div.place_div
     top: 20px;
     margin-left: 200px;
     text-align: right;
+    width: 200px;
 }
 div.place_div p
 {
@@ -77,6 +79,7 @@ div.first-page div.header div.date_div
     right: 50%;
     top: 20px;
     margin-right: 200px;
+    width: 200px;
 }
 div.date_div p
 {
@@ -85,9 +88,25 @@ div.date_div p
 
 div.first-page div.content
 {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+    text-align: center;
+}
+
+div.first-page div.content h1
+{
+    font-size: 50px;
+    margin-bottom: 25px;
+}
+
+div.first-page div.footer
+{
+    text-align: center;
+    margin-top: 25px;
+}
+
+div.first-page div.footer .sm
+{
+    font-size: 30px;
+    padding: 10px;
 }
 
 
@@ -112,4 +131,8 @@ div.test
 {
     border: solid white 1px;
     padding: 10px;
+}
+.underline
+{
+    text-decoration: underline;
 }

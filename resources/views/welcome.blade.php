@@ -15,7 +15,7 @@
             <div class="date_div">
                 <p>1 Mei 2016</p>
                 <p>Zondag 10:00 uur</p>
-                <p>_________________</p>
+                <hr>
             </div>
             <div class="triangle_div">
                 <p>Gratis</p>
@@ -24,17 +24,17 @@
             <div class="place_div">
                 <p>Slikveld 1</p>
                 <p>Dordrecht, Nederland</p>
-                <p>_________________</p>
+                <hr>
             </div>
             <div class="content">
                 <h1 class="title">Big Rivers</h1>
                 <span class="border">Het leukste festival van Dordrecht</span>
             </div>
             <div class="footer">
-                <a href=""><i class="facebook"></i></a>
-                <a href=""><i class="twitter"></i></a>
-                <a href=""><i class="youtube"></i></a>
-                <a href=""><i class="instagram"></i></a>
+                <a href=""><i class="facebook sm"></i></a>
+                <a href=""><i class="twitter sm"></i></a>
+                <a href=""><i class="youtube sm"></i></a>
+                <a href=""><i class="instagram sm"></i></a>
             </div>
         </div>
     </div>
