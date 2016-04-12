@@ -1,4 +1,4 @@
-_layout.blade.php<!doctype html>
+<!doctype html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -18,7 +18,9 @@ _layout.blade.php<!doctype html>
     {{-- Import bootstrap 1.12.1 JS Jquery --}}
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     {{-- Import bootstrap 3.3.6 JS --}}
-@yield('head')
+    {{-- Font Awesome - is awezome.--}}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    @yield('head')
 
 <title>@yield('title') - BigRivers</title>
 
