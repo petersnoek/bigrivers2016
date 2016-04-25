@@ -2,6 +2,14 @@
 @import url('//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,700,600);
 
+*, html {
+    margin: 0px;
+    padding: 0px;
+    font-weight: bold;
+    font-family: raleway, sans-serif;
+    font-size: 15px;
+}
+
 i {
     display: inline-block;
     font-family: FontAwesome;
@@ -29,19 +37,35 @@ i {
 body
 {
     background-color: #000000;
-    /*background-image: C:\Users\Toshiba\Dropbox\Big Rivers Website\HKf7193;*/
     color: #FFFFFF;
     font-weight: bold;
     font-family: raleway, sans-serif;
+    margin: 0px;
+}
+p
+{
+    margin-left: 10px;
 }
 
 .container
 {
     width: 100%; !important;
+    margin: 0px; !important;
+    padding: 0px; !important;
+}
+
+h1
+{
+    margin-left: 10px;
+    color: #ffd700;
 }
 
 /*//////////////////////////////////////////////////////////////////////////////////////////////*/
 /*Hier staat alle css voor de first-page*/
+div.first-page
+{
+    height: 1000px;
+}
 div.first-page div.header .img_header
 {
     display: block;
@@ -107,24 +131,232 @@ div.first-page div.footer .sm
 {
     font-size: 30px;
     padding: 10px;
+    margin-bottom: 25px;
 }
+
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////*/
+/*Hier staat alle css voor de second-page*/
+div.second-page
+{
+    background-color: #E62C2B;
+    width: 100%;
+    /*margin-left: -10px;*/
+    /*margin-right: -10px;*/
+    padding: 15px;
+}
+div.second-page div.content
+{
+    margin-left: 150px;
+    margin-right: 250px;
+    margin-bottom: 25px;
+    padding: 30px 15px;
+    background-color: #FFFFFF;
+    color: #000;
+}
+div.second-page div.header h1
+{
+    margin-left: 150px;
+    color: #ffd700;
+}
+div.second-page div.content p
+{
+    margin-right: 40%;
+}
+div.second-page div.content img.text-helper
+{
+    max-width: 600px;
+    max-height: 400px;
+    /*position: absolute;*/
+    float: right;
+    margin-right: -200px;
+}
+
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////*/
+/*Hier staat alle css voor de third-page*/
+
+
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////*/
+/*Hier staat alle css voor de fourth-page*/
+
+
+div.fourth-page
+{
+    background-color: #E62C2B;
+    width: 100%;
+    /*height: 1200px;*/
+    /*margin-left: -10px;*/
+    /*margin-right: -10px;*/
+    padding: 15px;
+}
+div.fourth-page h1
+{
+    margin-left: 12px;
+    margin-bottom: 20px;
+}
+div.fourth-page li {
+    display: inline;
+    margin: 40px;
+    padding: 12px;
+    overflow: hidden;
+}
+div.fourth-page li#click_don
+{
+    border: solid white 5px;
+    border-bottom-style: none;
+}
+div.fourth-page li:hover
+{
+    cursor: pointer;
+}
+div.fourth-page div.content
+{
+    border: solid white 5px;
+    color: black;
+    height: 500px;
+}
+div.fourth-page div.content p
+{
+    padding: 20px 0px 0px 40px;
+    font-size: 150%;
+}
+div.fourth-page div.content p span.time
+{
+    color: gold;
+    font-size: 120%;
+}
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////*/
+/*Hier staat alle css voor de fifth-page*/
+
+div.fifth-page
+{
+    background-color: #E62C2B;
+    width: 100%;
+    height: 1200px;
+    /*margin-left: -10px;*/
+    /*margin-right: -10px;*/
+    padding: 15px;
+}
+div.fifth-page h1
+{
+    margin-left: 12px;
+}
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////*/
+/*Hier staat alle css voor de sixth-page*/
+
+div.sixth-page
+{
+    background-color: #E62C2B;
+    width: 100%;
+    height: 600px;
+    /*margin-left: -10px;*/
+    /*margin-right: -10px;*/
+    padding: 15px;
+}
+div.sixth-page h1
+{
+    margin-left: 12px;
+    margin-bottom: 40px;
+}
+
+div.sixth-page div.block
+{
+    border: solid black 5px;
+    width: 25%;
+    height: 350px;
+    text-align: center;
+}
+div.sixth-page div.block1
+{
+    position: absolute;
+    left: 50%;
+    margin-left: 10px;
+}
+div.sixth-page div.block2
+{
+    position: absolute;
+    right: 50%;
+    margin-right: 10px;
+}
+div.sixth-page div.block .title
+{
+    font-size: 20px;
+    margin-top: 10px;
+
+}
+div.sixth-page div.block .price
+{
+    font-size: 36px;
+    margin: 90px 0px;
+}
+div.sixth-page div.block button
+{
+    padding: 5px 15px 5px 15px;
+}
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////*/
+/*Hier staat alle css voor de seventh-page*/
+
+div.seventh-page
+{
+    background-color: #E62C2B;
+    width: 100%;
+    height: 900px;
+    /*margin-left: -10px;*/
+    /*margin-right: -10px;*/
+    padding: 15px;
+}
+div.seventh-page h1
+{
+    margin-left: 12px;
+    margin-bottom: 40px;
+}
+div.seventh-page div.content div.buttonholder
+{
+    text-align: center;
+}
+
+div.seventh-page div.content div.buttonholder button
+{
+    margin-top: 20px;
+    padding: 3px 15px 3px 15px;
+}
+
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////*/
+/*Hier staat alle css voor de eighth-page*/
 
 
 
 
 /*//////////////////////////////////////////////////////////////////////////////////////////////*/
+/*Hier staat alle css voor de ninth-page*/
+
+
+div.ninth-page
+{
+    background-color: #E62C2B;
+    width: 100%;
+    height: 540px;
+    padding: 15px 0px;
+}
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////*/
 /*Hier staat alle css voor de last-page*/
 div.last-page div.footer
 {
-    background-color: red;
+    background-color: #E62C2B;
     width: 100%;
-    margin-top: 100px;
 }
 
-div.test
+img.gradient
 {
-    padding: 30px;
-    background: linear-gradient(315deg, transparent 45px, #333 0), linear-gradient(45deg, transparent 45px, #333 0);
+    /*margin-left: -10px;*/
+    width: 100%;
 }
 
 .border
@@ -135,4 +367,26 @@ div.test
 .underline
 {
     text-decoration: underline;
+}
+
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////*/
+/*Hier staat alle overige css voor de hele site*/
+
+img.img-show
+{
+    float: left;
+    width: 31.33%;
+    box-sizing: border-box;
+    height: 300px;
+    margin: 20px 1%;
+    border: solid #008000 5px;
+    transition-duration: 0.5s;
+    overflow: hidden;
+
+}
+img.img-show:hover
+{
+    border: solid #ffd700 5px;
+    transform:scale(1.05);
 }

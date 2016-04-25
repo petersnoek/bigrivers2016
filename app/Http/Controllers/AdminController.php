@@ -59,7 +59,7 @@ class AdminController extends Controller
     {
         $artists = Artist::all();
 
-        $message = $request->session->get('message');
+        $message = $request->session()->get('message');
 
         return view('admin/artist/list')->with(['artists' => $artists]);        
     }

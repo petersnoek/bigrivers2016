@@ -15,6 +15,7 @@ storage/
 .env.example
 .idea
 public/pictures
+public/pictures_layout
 
 # exclude PHP Storm workspace file
 .idea/workspace.xml

@@ -45,7 +45,7 @@
 
     <div class="last-page">
         <div class="footer">
-            <p>Copyright {{$copyright_year}} - Big Rivers Festival</p>
+            <p>&copy; Copyright {{$copyright_year}} - Big Rivers Festival</p>
         </div>
     </div>
 
