@@ -91,7 +91,7 @@ class AdminController extends Controller
     {
         $input = $request->all();
         
-        $upload_dir = 'pictures/';
+        $upload_dir = 'pictures/';   // make sure this exist in your /public/ folder
         for($index=1; $index<=3; $index++)
         {
             //artist section

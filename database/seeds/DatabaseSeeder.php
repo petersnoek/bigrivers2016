@@ -1,12 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
-<<<<<<< HEAD
 use Illuminate\Database\Eloquent\Model;
 use Faker\Factory as Faker;
-
-=======
->>>>>>> f0a26aedfa64c94d0c16bf96c0fda6bad16f6174
 
 class DatabaseSeeder extends Seeder
 {
@@ -17,7 +13,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-<<<<<<< HEAD
         $this->call('ArtistsTableSeeder');
 
         $this->command->info('Artists table seeded with 150 fake artists!');
@@ -48,8 +43,4 @@ class ArtistsTableSeeder extends Seeder {
         }
     }
 
-=======
-        // $this->call(UsersTableSeeder::class);
-    }
->>>>>>> f0a26aedfa64c94d0c16bf96c0fda6bad16f6174
 }

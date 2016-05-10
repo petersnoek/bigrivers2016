@@ -85,9 +85,8 @@ Route::group(['middleware' => 'web'], function () {
 
     // routes for importing eventkit data into bigrivers.nl website
     Route::get('/eventkit/artists', 'ConsumeAPIController@artists_list');
-    Route::post('/eventkit/artists', 'ConsumeAPIController@artists_confirm');
-    Route::post('/eventkit/artists_process', 'ConsumeAPIController@artists_process');
-    Route::get('/eventkit/performances', 'ConsumeAPIController@performances');
+    Route::get('/eventkit/artists/checked', 'ConsumeAPIController@artists_list_checked');
+    Route::post('/eventkit/artists', 'ConsumeAPIController@artists_addbatch');
 
 
 });
