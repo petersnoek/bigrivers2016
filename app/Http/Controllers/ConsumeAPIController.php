@@ -87,6 +87,8 @@ class ConsumeAPIController extends Controller
         //echo '<h1>confirm</h1>';
         //dd($_POST);
 
+        date_default_timezone_set('Europe/Amsterdam');
+
         if (isset($_POST['submit'])) {
 
             $comparisons = $request->session()->get('comparisons');
